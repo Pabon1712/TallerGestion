@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción Pokémon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+        }
+        .form-control {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            border-color: #004999;
+        }
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px 0;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center py-5">
+        <div class="card p-4 w-100" style="max-width: 600px;">
+            <h2 class="text-center mb-4">🔮 Predicción de Pokémon Legendario</h2>
+            <form action="/predict" method="post">
+                <div class="form-group">
+                    <label for="hp" class="form-label">HP</label>
+                    <input type="number" class="form-control" name="hp" id="hp" placeholder="Puntos de salud" required>
+                </div>
+                <div class="form-group">
+                    <label for="attack" class="form-label">Attack</label>
+                    <input type="number" class="form-control" name="attack" id="attack" placeholder="Ataque físico" required>
+                </div>
+                <div class="form-group">
+                    <label for="defense" class="form-label">Defense</label>
+                    <input type="number" class="form-control" name="defense" id="defense" placeholder="Defensa física" required>
+                </div>
+                <div class="form-group">
+                    <label for="sp_atk" class="form-label">Sp. Atk</label>
+                    <input type="number" class="form-control" name="sp_atk" id="sp_atk" placeholder="Ataque especial" required>
+                </div>
+                <div class="form-group">
+                    <label for="sp_def" class="form-label">Sp. Def</label>
+                    <input type="number" class="form-control" name="sp_def" id="sp_def" placeholder="Defensa especial" required>
+                </div>
+                <div class="form-group">
+                    <label for="speed" class="form-label">Speed</label>
+                    <input type="number" class="form-control" name="speed" id="speed" placeholder="Velocidad" required>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Predecir</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Predicción Pokémon | Desarrollado con ❤️ y Flask
+    </footer>
+</body>
+</html>

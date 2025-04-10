@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container {
+            flex: 1;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+        }
+        .form-control {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .info-text {
+            font-size: 0.9rem;
+            color: #bbbbbb;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .alert-info {
+            background-color: #1a1a2e;
+            border-color: #2e2e4e;
+            color: #00d4ff;
+        }
+        footer {
+            background-color: #1a1a1a;
+            padding: 10px 0;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center py-5">
+        <div class="card p-4 text-center w-100" style="max-width: 500px;">
+            <h2 class="mb-4">Resultado de la Predicción</h2>
+            {% if prediction %}
+                <div class="alert alert-info" role="alert">
+                    ✨ ¡Este Pokémon probablemente es <strong>Legendario</strong>!
+                </div>
+            {% else %}
+                <div class="alert alert-info" role="alert">
+                    🐾 Este Pokémon probablemente <strong>NO</strong> es legendario.
+                </div>
+            {% endif %}
+            <p class="info-text">Probabilidad: <strong>{{ probability }}%</strong></p>
+            <a href="/" class="btn btn-custom mt-3">Volver</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Predicción Pokémon | Desarrollado con ❤️ y Flask
+    </footer>
+</body>
+</html>
+
